@@ -92,6 +92,12 @@ export class GraphLineComponent implements OnInit {
   }
 
   renderChart(labels: string[], sales: number[]) {
+    const canvasElement = document.getElementById('chartLine') as HTMLCanvasElement;
+    if (!canvasElement) {
+      console.error('El canvas "chartLine" no está presente en el DOM.');
+      return;
+    }
+
     const config: ChartConfiguration = {
       type: 'line' as ChartType,
       data: {
@@ -151,10 +157,7 @@ export class GraphLineComponent implements OnInit {
       }
     };
 
-    this.chart = new Chart(
-      document.getElementById('chartLine') as HTMLCanvasElement,
-      config
-    );
+    this.chart = new Chart(canvasElement, config);
   }
 
   renderUserSalesChart(data: UserSales[]) {
