@@ -1,0 +1,37 @@
+<!-- Gráfico de línea principal -->
+<div class="card bg-base-100 shadow-xl p-4 md:p-6 lg:p-8 mb-6">
+  <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Reporte de Ventas 2024</h2>
+  <div class="flex justify-center">
+    <div class="w-full" style="max-width: 1200px;">
+      <canvas id="chartLine" class="w-full h-[250px] sm:h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px]"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+  <!-- Total Anual -->
+  <div class="card bg-base-100 shadow-xl p-6">
+    <h2 class="text-lg font-bold text-center mb-4">Total Anual</h2>
+    <div class="flex justify-center items-center">
+      <div class="text-3xl font-bold text-primary">
+        ${{totalAnual | number:'1.2-2'}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventas por Usuario -->
+  <div class="card bg-base-100 shadow-xl p-6">
+    <h2 class="text-lg font-bold text-center mb-4">Ventas por Usuario</h2>
+    <div class="w-full h-[300px]">
+      <canvas id="userSalesChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Reportes por Usuario -->
+  <div class="card bg-base-100 shadow-xl p-6">
+    <h2 class="text-lg font-bold text-center mb-4">Reportes por Usuario</h2>
+    <div class="w-full h-[300px]">
+      <canvas id="userReportsChart"></canvas>
+    </div>
+  </div>
+</div>

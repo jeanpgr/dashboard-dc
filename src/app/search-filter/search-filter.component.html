@@ -1,0 +1,34 @@
+<div class="join w-full">
+  <select
+    [(ngModel)]="selectedDepartamento"
+    (ngModelChange)="onDepartamentoChange()"
+    class="select select-bordered join-item"
+  >
+    <option disabled value="">Departamento</option>
+    <option *ngFor="let dep of departamentos" [value]="dep">{{ dep }}</option>
+  </select>
+  <div class="relative w-60">
+    <input
+      [formControl]="searchControl"
+      class="input input-bordered rounded-none w-full"
+      placeholder="Buscar cargo o nombre"
+      (focus)="onInputFocus()"
+      (blur)="onInputBlur()"
+    />
+    <ul
+      *ngIf="showDropdown"
+      class="absolute z-10 w-full bg-base-100 shadow-lg max-h-60 overflow-auto"
+    >
+      <li
+        *ngFor="let item of filteredItems"
+        (mousedown)="selectItem(item)"
+        class="p-2 hover:bg-base-200 cursor-pointer"
+      >
+        {{ item.cargo }} - {{ item.nombre }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <button class="btn join-item">Buscar</button>
+  </div>
+</div>
