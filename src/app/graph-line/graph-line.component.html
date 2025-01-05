@@ -1,61 +1,71 @@
-<div class="h-[1450px] md:h-[730px]">
+<div class="h-[1450px] md:h-[1300px]">
 
 </div>
-<div class="grid grid-cols-1 gap-6 p-4 md:grid-cols-3">
-  <!-- Gráfico de línea principal - Ajustado para mostrar completamente -->
+
+<div class="grid grid-cols-1 gap-6 p-4">
+  <!-- Reporte de Ventas 2024 - Full width -->
   <div class="col-span-full">
     <div class="bg-white rounded-lg shadow-xl p-4 md:p-6 lg:p-8">
       <h2 class="text-xl md:text-2xl font-bold text-center mb-4">Reporte de Ventas 2024</h2>
       <div class="flex justify-center">
-        <div class="w-full max-w-5xl">
-          <!-- Aumentamos la altura mínima y ajustamos los espaciados -->
+        <div class="w-full">
           <canvas id="chartLine" class="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]"></canvas>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- El resto de los componentes permanecen igual -->
-  <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-    <h2 class="text-lg font-bold text-center mb-4">Total Anual</h2>
-    <div class="text-3xl md:text-4xl font-bold text-[rgb(40,19,120)]">
-      ${{totalAnual | number:'1.2-2'}}
+  <!-- Reporte Financiero - Full width -->
+  <div class="col-span-full">
+    <div class="bg-white rounded-lg shadow-xl p-6">
+      <h2 class="text-lg font-bold text-center mb-4">Reporte Financiero</h2>
+      <div class="w-full h-[300px]">
+        <canvas id="financialChart"></canvas>
+      </div>
     </div>
   </div>
 
-  <div class="bg-white rounded-lg shadow-xl p-6">
-    <h2 class="text-lg font-bold text-center mb-4">Ventas por Usuario</h2>
-    <div class="w-full h-[200px] sm:h-[250px] md:h-[200px] lg:h-[300px]">
-      <canvas id="userSalesChart"></canvas>
+  <!-- Utilidad Mensual - Full width -->
+  <div class="col-span-full">
+    <div class="bg-white rounded-lg shadow-xl p-6">
+      <h2 class="text-lg font-bold text-center mb-4">Utilidad Mensual</h2>
+      <div class="w-full h-[300px]">
+        <canvas id="profitChart"></canvas>
+      </div>
     </div>
   </div>
 
-  <div class="bg-white rounded-lg shadow-xl p-6">
-    <h2 class="text-lg font-bold text-center mb-4">Reportes por Usuario</h2>
-    <div class="w-full h-[200px] sm:h-[250px] md:h-[200px] lg:h-[300px]">
-      <canvas id="userReportsChart"></canvas>
+  <!-- Ventas y Reportes por Usuario - Two columns -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 col-span-full">
+    <div class="bg-white rounded-lg shadow-xl p-6">
+      <h2 class="text-lg font-bold text-center mb-4">Ventas por Usuario</h2>
+      <div class="w-full h-[200px] sm:h-[250px] md:h-[200px] lg:h-[300px]">
+        <canvas id="userSalesChart"></canvas>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl p-6">
+      <h2 class="text-lg font-bold text-center mb-4">Reportes por Usuario</h2>
+      <div class="w-full h-[200px] sm:h-[250px] md:h-[200px] lg:h-[300px]">
+        <canvas id="userReportsChart"></canvas>
+      </div>
     </div>
   </div>
 
-  <div class="bg-white rounded-lg shadow-xl p-6">
-    <h2 class="text-lg font-bold text-center mb-4">Reporte Financiero</h2>
-    <div class="w-full h-[300px]">
-      <canvas id="financialChart"></canvas>
+  <!-- Total Anual y Utilidad Neta - Two columns -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 col-span-full">
+    <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+      <h2 class="text-lg font-bold text-center mb-4">Total Anual</h2>
+      <div class="text-3xl md:text-4xl font-bold text-[rgb(40,19,120)]">
+        ${{totalAnual | number:'1.2-2'}}
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+      <h2 class="text-lg font-bold text-center mb-4">Utilidad Neta Anual</h2>
+      <div class="text-3xl md:text-4xl font-bold text-green-600">
+        ${{netProfit | number:'1.2-2'}}
+      </div>
     </div>
   </div>
-
-  <div class="bg-white rounded-lg shadow-xl p-6">
-    <h2 class="text-lg font-bold text-center mb-4">Utilidad Mensual</h2>
-    <div class="w-full h-[300px]">
-      <canvas id="profitChart"></canvas>
-    </div>
-  </div>  
-
-  <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-    <h2 class="text-lg font-bold text-center mb-4">Utilidad Neta Anual</h2>
-    <div class="text-3xl md:text-4xl font-bold text-green-600">
-      ${{netProfit | number:'1.2-2'}}
-    </div>
-  </div>
-  
 </div>
